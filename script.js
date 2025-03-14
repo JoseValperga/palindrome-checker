@@ -1,18 +1,18 @@
 document.getElementById("check-btn").addEventListener("click", () => {
-    const inputUsuario = document.getElementById("text-input").value.trim();
+    const userInput = document.getElementById("text-input").value.trim();
   
-    if (!inputUsuario) {
+    if (!userInput) {
       alert("Please input a value");
       return;
     }
   
-    const inputLimpio = inputUsuario.toLowerCase().replace(/[^a-z0-9]/g, "");
-    const inputInverso = inputLimpio.split("").reverse().join("");
+    const cleanedInput = userInput.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const reverseInput = cleanedInput.split("").reverse().join("");
   
-    if (inputLimpio === inputInverso) {
-      document.getElementById("result").textContent = `${inputUsuario} is a palindrome`;
+    if (cleanedInput === reverseInput) {
+      document.getElementById("result").textContent = `${userInput} is a palindrome`;
     } else {
-      document.getElementById("result").textContent = `${inputUsuario} is not a palindrome`;
+      document.getElementById("result").textContent = `${userInput} is not a palindrome`;
     }
   });
   
